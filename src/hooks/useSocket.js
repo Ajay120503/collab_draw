@@ -11,7 +11,7 @@ const useSocket = (boardId) => {
   useEffect(() => {
     if (!user || !boardId || !token) return;
 
-    const SOCKET_URL = import.meta.env.DEV ? 'http://localhost:5000' : '/';
+    const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
     const socket = io(SOCKET_URL, {
       auth: { token },
     });
