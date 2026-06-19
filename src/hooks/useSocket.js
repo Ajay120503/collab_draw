@@ -11,10 +11,10 @@ const useSocket = (boardId) => {
   useEffect(() => {
     if (!user || !boardId || !token) return;
 
-    const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
-    const socket = io(SOCKET_URL, {
-      auth: { token },
-    });
+  const socket = io(import.meta.env.VITE_SOCKET_URL, {
+    auth: { token },
+    withCredentials: true,
+  });
 
     socketRef.current = socket;
 
