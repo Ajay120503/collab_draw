@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  .app-shell {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, rgba(20, 184, 166, 0.16), transparent 34rem),
+      linear-gradient(135deg, #f8fbff 0%, #eef3f8 48%, #f7f8fb 100%);
+  }
+
+  .auth-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background:
+      linear-gradient(rgba(10, 20, 34, 0.5), rgba(10, 20, 34, 0.65)),
+      url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80") center/cover;
+  }
+
+  .panel {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.11);
+    backdrop-filter: blur(18px);
+  }
+
+  .control {
+    border: 1px solid #d7dee8;
+    background: rgba(255, 255, 255, 0.92);
+    color: #172033;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+
+  .control:focus {
+    outline: none;
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.16);
+  }
+
+  .btn-primary {
+    background: #0f766e;
+    color: white;
+    box-shadow: 0 10px 22px rgba(15, 118, 110, 0.24);
+  }
+
+  .btn-primary:hover {
+    background: #115e59;
+  }
+
+  .btn-secondary {
+    border: 1px solid #d7dee8;
+    background: rgba(255, 255, 255, 0.82);
+    color: #26364f;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    border-color: #b6c4d6;
+  }
+
+  .board-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  }
+
+  .board-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(20, 184, 166, 0.55);
+    box-shadow: 0 20px 44px rgba(15, 23, 42, 0.13);
+  }
+
+  .canvas-grid {
+    background-color: #f8fafc;
+    background-image:
+      linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
